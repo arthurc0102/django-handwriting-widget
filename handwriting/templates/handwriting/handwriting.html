@@ -1,0 +1,4 @@
+{% include 'django/forms/widgets/input.html' %}
+<canvas id="id_{{ widget.name }}_canvas"></canvas>
+<button id="signature-pad-clear-button" type="reset" onclick="clearSignaturePad('{{ widget.name }}');">Clear</button>
+<script>initSignaturePad('{{ widget.name }}')</script>

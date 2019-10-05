@@ -1,0 +1,12 @@
+canvas {
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+}
+
+.errors canvas {
+  border: 1px solid #ba2121;
+}
+
+#signature-pad-clear-button {
+  margin-left: 5px;
+}
