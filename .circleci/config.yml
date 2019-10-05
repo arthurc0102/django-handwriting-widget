@@ -1,0 +1,82 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: python:3.7
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v3-dependencies-{{ checksum "Pipfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v3-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: |
+            pip install pipenv flake8 flake8-commas
+            pipenv install --dev --deploy --ignore-pipfile -v
+
+      - save_cache:
+          paths:
+            - ./.venv
+          key: v3-dependencies-{{ checksum "Pipfile.lock" }}
+
+      - run:
+          name: Check lint
+          command: |
+            flake8
+
+      - run:
+          name: Run tests
+          command: |
+            pipenv run python manage.py test
+
+  deploy:
+    docker:
+      - image: python:3.7
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: |
+            pip install twine
+
+      - run:
+          name: Build wheel and Deploy
+          command: |
+            python setup.py sdist bdist_wheel
+            python -m twine upload dist/*
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
+
+  test-and-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
+
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/
