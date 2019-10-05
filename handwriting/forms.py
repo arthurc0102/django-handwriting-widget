@@ -16,7 +16,7 @@ class HandwritingPad(TextInput):
         }
 
         js = (
-            'handwriting/js/signature_pad.min.js',
+            'handwriting/js/signature_pad.js',
             'handwriting/js/main.js'
         )
 
