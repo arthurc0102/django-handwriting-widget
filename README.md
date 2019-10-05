@@ -16,7 +16,7 @@ Add this app to `INSTALLED_APPS` in `settings.py`
 ```python
 INSTALLED_APPS = [
     ...
-    'email_notifications',
+    'handwriting',
 ]
 ```
 
