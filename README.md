@@ -1,6 +1,6 @@
 # Django Handwriting Widget
 
-> A handwriting widget for django
+> A handwriting widget for django  
 > Using [signature_pad](https://github.com/szimek/signature_pad) for js library
 
 ## Installation
