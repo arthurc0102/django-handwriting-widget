@@ -17,7 +17,7 @@ class HandwritingPad(TextInput):
 
         js = (
             'handwriting/js/signature_pad.js',
-            'handwriting/js/main.js'
+            'handwriting/js/main.js',
         )
 
     def __init__(self, attrs=None):

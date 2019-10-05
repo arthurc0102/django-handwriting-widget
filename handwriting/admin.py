@@ -5,13 +5,13 @@ from .forms import HandwritingPad
 
 
 __all__ = [
-    'HandwritingPadAdminMixin', 'HandwritingPadModelAdmin'
+    'HandwritingPadAdminMixin', 'HandwritingPadModelAdmin',
 ]
 
 
 class HandwritingPadAdminMixin:
     formfield_overrides = {
-        ImageField: {'widget': HandwritingPad}
+        ImageField: {'widget': HandwritingPad},
     }
 
 
