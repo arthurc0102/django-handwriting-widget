@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from handwriting.admin import HandwritingPadModelAdmin
+from .forms import SignatureForm
+from .models import Signature
 
-from .models import Signatures
 
-
-@admin.register(Signatures)
-class SignatureAdmin(HandwritingPadModelAdmin):
+@admin.register(Signature)
+class SignatureAdmin(admin.ModelAdmin):
+    form = SignatureForm
     list_display = ('name', 'create_at')
