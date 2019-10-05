@@ -1,5 +1,7 @@
 # Django Handwriting Widget
 
+[![CircleCI](https://circleci.com/gh/arthurc0102/django-handwriting-widget.svg?style=svg)](https://circleci.com/gh/arthurc0102/django-handwriting-widget)
+
 > A handwriting widget for django  
 > Using [signature_pad](https://github.com/szimek/signature_pad) for js library
 
