@@ -1,2 +1,0 @@
-include README.md
-recursive-include email_notifications *.html
