@@ -11,13 +11,12 @@ class HandwritingPad(TextInput):
     class Media:
         css = {
             'all': (
-                'handwriting/css/main.css',
+                'handwriting/css/signpad.css',
             ),
         }
 
         js = (
-            'handwriting/js/signature_pad.js',
-            'handwriting/js/main.js',
+            'handwriting/js/signpad.js',
         )
 
     def __init__(self, attrs=None):
