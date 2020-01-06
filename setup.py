@@ -21,7 +21,7 @@ setup(
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
-    include_package_data=False,
+    include_package_data=True,
     install_requires=[
         'django',
     ],
