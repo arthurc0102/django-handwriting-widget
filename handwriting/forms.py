@@ -48,5 +48,5 @@ class HandwritingPad(TextInput):
             return None
 
         b64_image = base64.b64encode(value.file.read()).decode('utf-8')
-        ext = value.path.split('.')[-1]
+        ext = value.name.split('.')[-1]
         return f'data:image/{ext};base64,{b64_image}'
