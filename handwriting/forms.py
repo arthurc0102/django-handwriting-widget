@@ -30,7 +30,7 @@ class HandwritingPad(TextInput):
     def value_from_datadict(self, data, files, name):
         data_url = super().value_from_datadict(data, files, name)
         if not data_url:
-            return object()  # Let fields raise ValidationError
+            return None  # Let fields raise ValidationError
 
         image_format, image_string = data_url.split(';base64,')
         ext = image_format.split('/')[-1]
