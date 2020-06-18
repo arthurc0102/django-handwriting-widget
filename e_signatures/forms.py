@@ -11,4 +11,5 @@ class SignatureForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'image': HandwritingPad(),
+            'image_no_required': HandwritingPad(),
         }
